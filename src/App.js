@@ -1,22 +1,25 @@
+import React from "react";
+import "./App.css";
 import Weather from "./Weather";
-import './App.css';
-import Loader from 'react-loader-spinner';
+import City from "./City";
+import SearchForm from "./SearchForm";
+import DateNtime from "./DateNtime";
+import HumNwind from "./HumNwind";
+import Footer from "./Footer";
 
-function App() {
-  return (
+
+export default function App() {
+  return (<div className="App-Footer">
     <div className="App">
-      <h1>Hello from React!</h1>
+        <SearchForm />
+       <City />
+      <DateNtime />
       <Weather />
-      <Loader
-         type="Puff"
-         color="#00BFFF"
-         height={100}
-         width={100}
-         timeout={3000}
- 
-      />
+      <HumNwind />
     </div>
-  );
+    <div className="footer">
+    <Footer />
+    </div>
+    </div>
+    );
 }
-
-export default App;
