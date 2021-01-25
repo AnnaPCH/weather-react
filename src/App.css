@@ -5,13 +5,9 @@
   max-width: 600px;
   border-radius: 4px;
   color: #f8f8c9;
-
-  background-image: conic-gradient(
-    from 40deg,
-    rgb(14, 14, 14, 0.9),
-    rgb(14, 14, 14)
-  );
+  background-image: url(watcol1.png);
 }
+
 .footer {
   text-align: left;
   max-width: 600px;
