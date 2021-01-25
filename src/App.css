@@ -1,12 +1,15 @@
 .App {
   margin: 15px auto;
+  margin-bottom: 0;
   padding: 20px 10px;
   border: 1px solid #006400;
   max-width: 600px;
   border-radius: 4px;
   color: #f8f8c9;
-  background-image: url(https://github.com/AnnaPCH/my-weather-app/blob/main/watcol1.png?raw=true);
+  background: rgb(14, 14, 14, 0.9);
 }
 .footer {
-  text-align: center;
+  text-align: left;
+  max-width: 600px;
+  margin: 0px auto;
 }
