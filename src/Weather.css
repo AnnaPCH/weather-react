@@ -4,16 +4,7 @@
 }
 
 .Weather .links a {
-  display: inline;
   color: #f8f8c9;
   font-size: x-small;
   text-decoration: none;
-}
-
-.Weather img {
-  display: inline;
-}
-
-.Weather .description {
-  display: block;
 }

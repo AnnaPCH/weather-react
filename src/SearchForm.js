@@ -4,8 +4,14 @@ import "./SearchForm.css";
 export default function SearchForm() {
   return (
     <form className="SearchForm">
-      <input type="search" placeholder="Enter city..." /> 
-      <button className=" btn btn-secondary"> Submit </button>
+      <div className="row">
+      <div className="col-9">
+      <input type="search" placeholder="Enter city..."   className="form-control"/> 
+      </div>
+      <div classNsme="col-3">
+      <button className=" btn btn-secondary"> Search </button>
+    </div>
+    </div>
     </form>
   );
 }
