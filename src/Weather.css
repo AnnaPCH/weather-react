@@ -1,10 +1,28 @@
 .Weather h1 {
   font-weight: lighter;
   display: inline;
-  padding: 4px;
+  font-size: 60px;
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.Weather img {
+  height: 64px;
+  width: 64px;
+}
+
+.Weather .links {
+  position: relative;
+  top: -38px;
+  left: -10px;
+  font-size: 25px;
 }
 
 .Weather .links a {
   color: #f8f8c9;
   text-decoration: none;
+}
+
+.Weather .description {
+  margin: 10px;
 }
