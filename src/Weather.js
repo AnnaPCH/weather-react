@@ -3,13 +3,23 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function Weather() {
-  let [city, setCity] = useState("heraklion");
-    function showCity(response) {
-      setCity(response.data.name);
-    }
-  let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6870760fab0d60a8a4c52bbd8751c3cc&units=metric`;
-  axios(apiUrl).then(showCity)
-  return ( <div className="container">
+  const [ready, setReady] = useState(false);
+  let [weatherData, setWeatherData] = useState({});
+  
+  function handleResposne (response) {
+    setReady(true);
+    setWeatherData({
+      city: response.data.name,
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+    });
+  } 
+
+  if(ready){
+     return ( <div className="container">
     <form className="SearchForm">
       <div className="row">
       <div className="col-9">
@@ -22,7 +32,7 @@ export default function Weather() {
     </form>
    
     <div className="City">
-      <h1>{city}</h1>
+      <h1>{weatherData.city}</h1>
     </div>
     <div className="row">
     <div className="col">
@@ -30,24 +40,24 @@ export default function Weather() {
       Last updated on Tuesday, 20:00 
     </div>
     <div className="Weather"><br />
-      <h1> 19 </h1>
+      <h1>{Math.round(weatherData.temperature)} </h1>
       <span className="links">
 <a href="/"> °C  </a> | <a href="/"> °F</a>
       </span>
       <img
-        src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+        src={weatherData.iconUrl}
         alt="partly cloudy" className="float-left"
       />
-      <div className="description"> Partly cloudy </div>
+      <div className="description text-capitalise"> {weatherData.description} </div>
       </div>
       </div>
       <div className="col">
        <ul className="HumNwind"><br /><br />
       <li className="hum">
-        Humidity: <span id="humidity">70 </span>%
+        Humidity: <span id="humidity"> {weatherData.humidity} </span>%
       </li>
       <li className="wind">
-        Wind: <span id="windspeed">4 </span>
+        Wind: <span id="windspeed"> {Math.round(weatherData.wind)}  </span>
         <span id="wSpDeg">m/s</span>
       </li>
     </ul>
@@ -57,4 +67,10 @@ export default function Weather() {
     </div>
     
   );
+  } else {
+    let city= "heraklion";
+  let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6870760fab0d60a8a4c52bbd8751c3cc&units=metric`;
+  axios.get(apiUrl).then(handleResposne);
+  return "Loading...";
+  }
 }
