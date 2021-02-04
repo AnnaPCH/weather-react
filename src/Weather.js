@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 
 export default function Weather(props) {
 
-  const [city,setCity] = useState(props.defaultcity)
+  const [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({ready: false});
   
   function handleResposne (response) {
@@ -19,7 +19,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png",
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000)
     });
   } 
