@@ -27,11 +27,14 @@ const codeMapping = {
     
     
 
-    return ( <ReactAnimatedWeather
+    return (<div className="WeatherIcon">
+      
+       <ReactAnimatedWeather
     icon={codeMapping[props.code]}
     color="#f8f8c9"
     size={50}
     animate= {true}
   />
+  </div>
   );
 }

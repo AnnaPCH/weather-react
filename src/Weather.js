@@ -51,6 +51,7 @@ function search() {
     </div>
     </form>
    <WeatherInfo data={weatherData}/>
+  
     </div>
     
   );

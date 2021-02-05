@@ -6,22 +6,43 @@
   margin-top: 0;
 }
 
-.Weather .links {
-  position: relative;
-  top: -34px;
-  left: -10px;
-  font-size: 22px;
-}
-
-.Weather .links a {
-  color: #f8f8c9;
-  text-decoration: none;
-}
-
 .Weather .description {
   margin: 10px;
 }
 
-.Weather canvas {
-  margin: 15px;
+.WeatherIcon canvas {
+  margin-top: 20px;
+}
+
+.WeatherInfo h6 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #f9f9f9;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+.text-between-line {
+  font-weight: lighter;
+  background-image: url(mauve.png);
+  padding: 0 10px;
+}
+
+.Units h1 {
+  display: inline;
+  font-weight: lighter;
+  font-size: 64px;
+  margin-left: 20px;
+}
+
+.Units .links {
+  position: relative;
+  top: -35px;
+}
+
+.Units .active {
+  font-size: x-large;
+}
+
+.ForecastPreview {
+  margin: 0 auto;
 }
